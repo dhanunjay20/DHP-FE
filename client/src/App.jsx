@@ -1,10 +1,13 @@
 import React from 'react'
-import Header from './components/Header'
+import Stats from './components/Stats';
+import OurMission from './components/OurMission';
+import Header from './components/Header';
 import Footer from './components/Footer'
 const App = () => {
   return (
     <div>
-      <Header />
+      <Stats />
+      <OurMission />
     </div>
   )
 }
