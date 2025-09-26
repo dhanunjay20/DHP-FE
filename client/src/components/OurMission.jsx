@@ -1,70 +1,76 @@
 import React from "react";
-import smileImg from "../assets/smile.jpg";
+import smileImage from "../assets/smile.jpg"; 
 
 const OurMission = () => {
-  const textSectionStyle = {
-    backgroundColor: "#0d3b66", // thick blue background
-    color: "white",
-    padding: "50px 20px",
+  const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "330px", // max height
+    margin: "0 150px", // left-right gap
+    overflow: "hidden",
+  };
+
+  const leftStyle = {
+    flex: "0 0 45%", // 40% width
+    backgroundColor: "#343579",
+    color: "#ffffff",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "45px 0 48px 0",
     textAlign: "center",
   };
 
-  const headingStyle = {
-    fontSize: "2rem",
-    marginBottom: "20px",
-  };
-
-  const paragraphStyle = {
-    fontSize: "1.1rem",
-    marginBottom: "20px",
-    lineHeight: "1.6",
-    maxWidth: "600px",
-    marginLeft: "auto",
-    marginRight: "auto",
-  };
-
-  const buttonStyle = {
-    backgroundColor: "#1f7a1f",
-    color: "white",
-    border: "none",
-    padding: "12px 25px",
-    cursor: "pointer",
-    borderRadius: "5px",
-    fontSize: "1rem",
-    transition: "background-color 0.3s",
+  const rightStyle = {
+    flex: "0 0 55%", // 60% width
+    height: "100%",
   };
 
   const imageStyle = {
     width: "100%",
-    height: "auto",
-    display: "block",
-    marginTop: "0",
-    borderRadius: "10px",
+    height: "100%",
+    objectFit: "cover",
+    margin:"30px 100px 0 0",
+  };
+
+  const headingStyle = {
+    fontSize: "2.5rem",
+    fontWeight: "bold",
+  };
+
+  const paragraphStyle = {
+    fontSize: "1.2rem",
+    lineHeight: "1.2",
+  };
+
+  const buttonStyle = {
+    backgroundColor: "#008577",
+    color: "#ffffff",
+    padding: "0.75rem 1.5rem",
+    borderRadius: "8px",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "1rem",
   };
 
   return (
-    <section>
-      {/* Text Block */}
-      <div style={textSectionStyle}>
+    <div style={containerStyle}>
+      {/* Left Side */}
+      <div style={leftStyle}>
         <h2 style={headingStyle}>Our Mission</h2>
         <p style={paragraphStyle}>
-          To provide world-class healthcare that gets recommended by physicians,
-          referred by patients, and chosen by partners.
+          To provide world-class healthcare that is affordable by patients,
+          prescribed by physicians, and chosen by partners.
         </p>
-        <button
-          style={buttonStyle}
-          onMouseOver={e => (e.target.style.backgroundColor = "#145214")}
-          onMouseOut={e => (e.target.style.backgroundColor = "#1f7a1f")}
-        >
-          Discover Values@Koye
-        </button>
+        <button style={buttonStyle}>Discover Values @ Koye</button>
       </div>
 
-      {/* Image Below */}
-      <div>
-        <img src="/assets/smile.jpg" alt="Mission Illustration" />
+      {/* Right Side */}
+      <div style={rightStyle}>
+        <img src={smileImage} alt="Our Mission" style={imageStyle} />
       </div>
-    </section>
+    </div>
   );
 };
 
